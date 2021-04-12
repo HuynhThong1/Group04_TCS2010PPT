@@ -1,0 +1,83 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex text-center text-light">
+    <div class="col-4 bg-primary align-middle p-4" data-toggle="collapse" data-target="#stdofDept" aria-expanded="false" aria-controls="stdofDept">
+        <h3 class="mb-3">@ViewBag.TotalStudent</h3>
+        <div>Students</div>
+    </div>
+    <div class="col-4 bg-warning align-middle p-4" data-toggle="collapse" data-target="#stdofDept" aria-expanded="false" aria-controls="stdofDept">
+        <h3 class="mb-3">@ViewBag.TotalDepartment </h3>
+        <div>Departments</div>
+    </div>
+    <div class="col-4 bg-success align-middle p-4" data-toggle="collapse" data-target="#contribution" aria-expanded="false" aria-controls="contribution">
+        <h3 class="mb-3">@ViewBag.TotalContributions </h3>
+        <div>Contributions</div>
+    </div>
+</div>
+
+<div class="d-flex text-center text-dark pt-4">
+    <div class="col align-middle bg-white collapse" id="stdofDept">
+        <h3 class="mb-3 mt-3">@ViewBag.TotalStudentofEventDept</h3>
+        <div>Students of Event Department</div>
+    </div>
+    <div class="col align-middle bg-white collapse" id="stdofDept">
+        <h3 class="mb-3 mt-3">@ViewBag.TotalStudentofITDept</h3>
+        <div>Students of IT Department</div>
+    </div>
+    <div class="col align-middle bg-white collapse" id="stdofDept">
+        <h3 class="mb-3 mt-3">@ViewBag.TotalStudentofBusinessDept</h3>
+        <div>Students of Business Department</div>
+    </div>
+
+
+    <div class="col align-right bg-white collapse" id="contribution">
+        <h3 class="mb-3 mt-3">@ViewBag.ApprovedContributions</h3>
+        <div>Approved</div>
+    </div>
+</div>
+
+
+
+<div id="chart" style="width: 900px; height: 500px;"></div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            type: 'GET',
+            dataType: "json",
+            contentType: "application/json",
+            url: '/api/report/manager_contribution',
+            success: function (result) {
+                google.charts.load('current', { 'packages': ['corechart'] });
+                google.charts.setOnLoadCallback(function () { drawChart(result); });
+            }
+        });
+    });
+
+    function drawChart(result) {
+        var chartwidth = $(".container").width();
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'DepartmentName');
+        data.addColumn('number', 'TotalContribution');
+
+        var dataArray = [];
+        $.each(result, function (i, obj) { dataArray.push([obj.departmentName, obj.totalContribution]); });
+        data.addRows(dataArray);
+
+        var options = {
+            title: 'Contribution of Department',
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart'));
+        chart.draw(data, options);
+    }
+</script>
+

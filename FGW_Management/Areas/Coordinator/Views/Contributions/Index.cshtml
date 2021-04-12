@@ -1,0 +1,49 @@
+﻿ @model IEnumerable<FGW_Management.Models.Contribution>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-action="Index" asp-area="" asp-controller="Home">Home</a></li>
+        <li class="breadcrumb-item"><a asp-action="Index" asp-area="Coordinator" asp-controller="Submissions">Topics</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Contributions</li>
+    </ol>
+</nav>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contributor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Submission)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contributor.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Submission.Title)
+            </td>
+            <td align="right">
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary"><i class="fas fa-folder-open"></i> Open  Contribution</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
