@@ -430,3 +430,8 @@ C:\Topup_Web\FGW_Management\FGW_Management\bin\Debug\net5.0\runtimes\win-x86\nat
 C:\Topup_Web\FGW_Management\FGW_Management\obj\Debug\net5.0\Razor\Areas\Manager\Views\Contributions\Index.cshtml.g.cs
 C:\Topup_Web\FGW_Management\FGW_Management\obj\Debug\net5.0\Razor\Areas\Manager\Views\Submissions\Index.cshtml.g.cs
 C:\Topup_Web\FGW_Management\FGW_Management\obj\Debug\net5.0\Razor\Views\Home\Chat.cshtml.g.cs
+C:\Topup_Web\FGW_Management\FGW_Management\bin\Debug\net5.0\Google.Apis.dll
+C:\Topup_Web\FGW_Management\FGW_Management\bin\Debug\net5.0\Google.Apis.Auth.PlatformServices.dll
+C:\Topup_Web\FGW_Management\FGW_Management\bin\Debug\net5.0\Google.Apis.Auth.dll
+C:\Topup_Web\FGW_Management\FGW_Management\bin\Debug\net5.0\Google.Apis.Core.dll
+C:\Topup_Web\FGW_Management\FGW_Management\bin\Debug\net5.0\Google.Apis.Drive.v3.dll

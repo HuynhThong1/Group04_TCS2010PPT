@@ -79,13 +79,13 @@ namespace FGW_Management.Models
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime CreationDay { get; set; }
 
-        [Required(ErrorMessage = "Please enter Topic deadline term 1!")]
-        [DisplayName("Topic Deadline term 1")]
+        [Required(ErrorMessage = "Please enter Topic deadline 1!")]
+        [DisplayName("Topic Deadline 1")]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime SubmissionDeadline_1 { get; set; }
 
-        [Required(ErrorMessage = "Please enter Topic deadline term 2!")]
-        [DisplayName("Topic Deadline term 2")]
+        [Required(ErrorMessage = "Please enter Topic deadline 2!")]
+        [DisplayName("Topic Deadline 2")]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime SubmissionDeadline_2 { get; set; }
 

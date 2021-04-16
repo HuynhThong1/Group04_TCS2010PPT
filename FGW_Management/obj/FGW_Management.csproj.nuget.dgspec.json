@@ -44,6 +44,10 @@
               "target": "Package",
               "version": "[21.4.0, )"
             },
+            "Google.Apis.Drive.v3": {
+              "target": "Package",
+              "version": "[1.51.0.2265, )"
+            },
             "MailKit": {
               "target": "Package",
               "version": "[2.11.1, )"

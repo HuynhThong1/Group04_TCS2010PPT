@@ -8,6 +8,9 @@ using Microsoft.EntityFrameworkCore;
 using FGW_Management.Data;
 using FGW_Management.Models;
 using System.Security.Claims;
+using System.IO;
+using System.IO.Compression;
+using System.Net.Mime;
 
 namespace FGW_Management.Areas.Manager.Views
 {
@@ -53,6 +56,51 @@ namespace FGW_Management.Areas.Manager.Views
             }
 
             return View(contribution);
+        }
+
+        public async Task<ActionResult> DownloadApprovedFile(int topicId = -1)
+        {
+            var approvedContributions = await _context.Contributions.Include(c => c.Contributor)
+                                                                    .Include(c => c.SubmittedFiles)
+                                                                    .Where(c => c.SubmissionId == topicId
+                                                                    && c.Status == ContributionStatus.Approved).ToListAsync();
+
+            if (approvedContributions.Count() > 0)
+            {
+                var topic = await _context.Submissions.FindAsync(topicId);
+                var zipPath = Path.Combine(_Global.PATH_TOPIC, topicId.ToString(), topic.Title + ".zip");
+
+                using (FileStream zipToOpen = new FileStream(zipPath, FileMode.Create))
+                {
+                    using (ZipArchive achive = new ZipArchive(zipToOpen, ZipArchiveMode.Update))
+                    {
+                        foreach (var contribution in approvedContributions)
+                        {
+                            foreach (var file in contribution.SubmittedFiles)
+                            {
+                                achive.CreateEntryFromFile(file.URL, Path.Combine(contribution.Contributor.Number
+                                                                                    , Path.GetFileName(file.URL)));
+                            }
+                        }
+                    }
+                }
+
+                byte[] fileBytes = System.IO.File.ReadAllBytes(zipPath);
+
+                System.IO.File.Delete(zipPath);
+
+
+                return File(fileBytes, MediaTypeNames.Application.Zip, Path.GetFileName(zipPath));
+            }
+
+            return NoContent();
+        }
+
+        public async Task<ActionResult> DownloadFile(int fileId = -1)
+        {
+            var file = await _context.SubmittedFiles.FindAsync(fileId);
+            byte[] fileBytes = System.IO.File.ReadAllBytes(file.URL);
+            return File(fileBytes, MediaTypeNames.Application.Octet, Path.GetFileName(file.URL));
         }
 
         private bool ContributionExists(int id)
