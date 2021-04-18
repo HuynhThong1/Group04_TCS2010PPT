@@ -184,6 +184,7 @@ namespace FGW_Management.Areas.Admin
 
             FGW_User user = await _context.Users
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (user == null)
             {
                 return NotFound();
@@ -197,7 +198,8 @@ namespace FGW_Management.Areas.Admin
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            FGW_User user = await _context.Users.FindAsync(id);
+            ViewData["Departments"] = new SelectList(_context.Departments.ToList(), "Id", "Name");
+            var user = await _context.Users.FindAsync(id);
             _context.Users.Remove(user);
             await _context.SaveChangesAsync(); 
             return RedirectToAction(nameof(Index));

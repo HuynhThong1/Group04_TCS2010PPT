@@ -16,7 +16,9 @@ namespace FGW_Management.Data
         public DbSet<Comment> Comments { get; set; }
         public DbSet<SubmittedFile> SubmittedFiles { get; set; }
         public DbSet<Contribution> Contributions { get; set; }
-        public DbSet<Chat> Chats { get; set; }
 
+        public DbSet<Group> Groups { get; set; }
+        public DbSet<Message> Message { get; set; }
+        public DbSet<UserGroup> UserGroup { get; set; }
     }
 }

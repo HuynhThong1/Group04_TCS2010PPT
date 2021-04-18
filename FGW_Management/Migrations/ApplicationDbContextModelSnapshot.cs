@@ -16,28 +16,6 @@ namespace FGW_Management.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.4");
 
-            modelBuilder.Entity("FGW_Management.Models.Chat", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Content")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Chats");
-                });
-
             modelBuilder.Entity("FGW_Management.Models.Comment", b =>
                 {
                     b.Property<int>("Id")
@@ -200,6 +178,40 @@ namespace FGW_Management.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("FGW_Management.Models.Group", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("GroupName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Groups");
+                });
+
+            modelBuilder.Entity("FGW_Management.Models.Message", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("AddedBy")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("GroupId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("message")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Message");
+                });
+
             modelBuilder.Entity("FGW_Management.Models.Submission", b =>
                 {
                     b.Property<int>("Id")
@@ -244,6 +256,23 @@ namespace FGW_Management.Migrations
                     b.HasIndex("ContributionId");
 
                     b.ToTable("SubmittedFiles");
+                });
+
+            modelBuilder.Entity("FGW_Management.Models.UserGroup", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("GroupId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("UserGroup");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -372,15 +401,6 @@ namespace FGW_Management.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("FGW_Management.Models.Chat", b =>
-                {
-                    b.HasOne("FGW_Management.Models.FGW_User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("FGW_Management.Models.Comment", b =>

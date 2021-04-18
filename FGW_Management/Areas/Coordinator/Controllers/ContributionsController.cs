@@ -169,7 +169,7 @@ namespace FGW_Management.Areas.Coordinator.Views
 
                     var contributionFullname = $"{existContribution.Contributor.FirstName} {existContribution.Contributor.LastName}";
 
-                    MailboxAddress from = new MailboxAddress("FGW Management System", "huynhmihthong1912@gmail.com");
+                    MailboxAddress from = new MailboxAddress("FGW Management System", "thongenterprice01@gmail.com");
                     MailboxAddress to = new MailboxAddress(contributionFullname, existContribution.Contributor.Email);
 
                     BodyBuilder bodyBuilder = new BodyBuilder();
@@ -187,7 +187,7 @@ namespace FGW_Management.Areas.Coordinator.Views
                     SmtpClient client = new SmtpClient();
 
                     client.Connect("smtp.gmail.com", 465, true);
-                    client.Authenticate("huynhminhthong1912", "pqdquwmvialvcchv");
+                    client.Authenticate("thongenterprice01", "yahnitpiybjcvihv");
 
                     client.Send(message);
                     client.Disconnect(true);

@@ -1,4 +1,6 @@
-﻿using FGW_Management.Models;
+﻿using FGW_Management.Data;
+using FGW_Management.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,10 +14,14 @@ namespace FGW_Management.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        public readonly ApplicationDbContext _context;
+        public readonly UserManager<FGW_User> _userManager;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context, UserManager<FGW_User> userManager)
         {
             _logger = logger;
+            _context = context;
+            _userManager = userManager;
         }
 
         public IActionResult Index()
@@ -37,10 +43,6 @@ namespace FGW_Management.Controllers
             return View();
         }
 
-        public IActionResult Chat()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

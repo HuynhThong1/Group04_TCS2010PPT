@@ -21,26 +21,26 @@ namespace FGW_Management.Models
     public class FGW_User : IdentityUser
     {
         public string Number { get; set; }
-        [Required(ErrorMessage = "Please enter first name!")]
+       // [Required(ErrorMessage = "Please enter first name!")]
         [DisplayName("First Name")]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "Please enter last name!")]
+        //[Required(ErrorMessage = "Please enter last name!")]
         [DisplayName("Last Name")]
         public string LastName { get; set; }
 
 
-        [Required(ErrorMessage = "Please choose gender!")]
+        //[Required(ErrorMessage = "Please choose gender!")]
         [DisplayName("Gender")]
         public string Gender { get; set; }
 
 
-        [Required(ErrorMessage = "Please fill your birthday!")]
+        //[Required(ErrorMessage = "Please fill your birthday!")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? Birthday { get; set; }
 
-        [Required(ErrorMessage = "Please fill your address!")]
+        //[Required(ErrorMessage = "Please fill your address!")]
         [Display(Name = "Address")]
         public string Address { get; set; }
 
@@ -50,7 +50,6 @@ namespace FGW_Management.Models
 
         public virtual ICollection<Contribution> Contributions { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
-
     }
 
     public class Department
@@ -144,18 +143,6 @@ namespace FGW_Management.Models
 
         public int ContributionId { get; set; }
         public virtual Contribution Contribution { get; set; }
-    }
-
-    public class Chat
-    {
-        public int Id { get; set; }
-        public DateTime Date { get; set; }
-        [DisplayName("Chat Content")]
-        public string Content { get; set; }
-
-        [DisplayName("User Name")]
-        public string UserId { get; set; }
-        public virtual FGW_User User { get; set; }
     }
 
     public class API_Department_Contribution 

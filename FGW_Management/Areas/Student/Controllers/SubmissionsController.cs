@@ -175,27 +175,27 @@ namespace FGW_Management.Areas.Student.Views
                                             var contributionFullname = $"{existContribution.Contributor.FirstName} {existContribution.Contributor.LastName}";
                                             var coordinatorFullName = $"{coordinator.FirstName} {coordinator.LastName}";
 
-                                            MailboxAddress from = new MailboxAddress("FGW Management System", "huynhmihthong1912@gmail.com");
+                                            MailboxAddress from = new MailboxAddress("FGW Management System", "thongenterprice01@gmail.com");
                                             MailboxAddress to = new MailboxAddress(coordinatorFullName, coordinator.Email);
 
                                             BodyBuilder bodyBuilder = new BodyBuilder();
                                             bodyBuilder.TextBody = $"Hello Coordinator,\n\n" +
                                                    $"Your student was submited thier contribution with the title is {existContribution.Submission.Title},\n\n" +
                                                    $"This is contribution by {contributionFullname},\n\n" +
-                                                   $"Please review and give their feedback soon as possible {contributionFullname},\n\n" +
+                                                   $"Please review and give their feedback soon as possible,\n\n" +
                                                    $"Thank you for checking this notification,\n\n" +
                                                    $"Best regards.";
 
                                             MimeMessage message = new MimeMessage();
                                             message.From.Add(from);
                                             message.To.Add(to);
-                                            message.Subject = $"Contribution for {existContribution.Submission.Title} Status";
+                                            message.Subject = $"Contribution of {existContribution.Submission.Title}";
                                             message.Body = bodyBuilder.ToMessageBody();
 
                                             SmtpClient client = new SmtpClient();
 
                                             client.Connect("smtp.gmail.com", 465, true);
-                                            client.Authenticate("huynhminhthong1912", "pqdquwmvialvcchv");
+                                            client.Authenticate("thongenterprice01", "yahnitpiybjcvihv");
 
                                             client.Send(message);
                                             client.Disconnect(true);

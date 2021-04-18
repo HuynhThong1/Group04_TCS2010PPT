@@ -2,27 +2,322 @@
     ViewData["Title"] = "Home Page";
 }
 
-<head>
-    <link rel="stylesheet" type="site.css" href="~/css/site.css" />
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target=“#mycarousel” data-slide-to=“2”></li>
+    </ul>
 
-   
-</head>
 
-<!-- Home section -->
-<section id="home">
-    <div class="row align-items-center min-vh-100 content">
 
-        <div class="col-md-8 ml-md-5 text-center text-md-left">
-
-            <h2 class="thong">Group 04</h2>
-            <h1>FGW Education</h1>
-            <h3 style="text-transform: uppercase;">Walk on da street never stuck on da beat (~.~)</h3>
-
-            <iframe src="https://www.youtube.com/embed/pLYJNKD7M-Y?autoplay=1&mute=1">
-            </iframe>
-
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="~/Images/greenwichuniversity.jpg" alt="Image" style="width: 110%; margin: auto; min-height: 120px;">
+            <div class="carousel-caption">
+                <h4>Welcome to GreenWich Univiersity</h4>
+            </div>
         </div>
 
-    </div>
+        <div class="carousel-item">
+            <img src="~/Images/greenwich3.jpg" alt="Image" style="width: 110%; margin: auto; min-height: 120px;">
+            <div class="carousel-caption">
 
-</section>
+            </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <h3 class="title-university" style="        font-size: 30px;
+        color: #4a65af;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-bottom: 20px;
+        margin-top: 20px;
+">
+        News - Events
+    </h3>
+    <hr style="        width: 100%;
+        text-align: left;
+        height: 1.5px;
+        color: #FF8C00;
+        background-color: #FF8C00;
+">
+</div>
+
+<div class="container">
+    <div class="news">
+        <div class="row" style="margin-top: 20px">
+            <div class="col-sm-4">
+                <div class="alert alert-primary text-dark" style="height:90%">
+                    <div class="card-heading" style="height:7%"><h4>Student Honoring Ceremony</h4> </div>
+                    <hr style="        width: 50%;
+        text-align: left;
+        margin-left: 0;
+        height: 1.2px;
+        color: #FF8C00;
+        background-color: #FF8C00;
+">
+                    <div class="card-body">
+                        <div class="">
+                            <a class="" href="https://greenwich.edu.vn/%7Bhcm%7D-le-ton-vinh-sinh-vien-ky-spring-2016-e36.html" title="[HN] Talk show: Chuyện của Hiên - Khi ta đôi mươi">
+                                <div class="" data-aos="zoom-in">
+                                    <img class="img-responsive" src="~/Images/tonvinh.jpg" width="100%" alt="Image">
+                                </div>
+                            </a>
+                            <div class="card-footer">
+                                On the evening of March 31, Greenwich University (Vietnam) - Hanoi campus solemnly held the Fall 2020 Student Honoring Ceremony. This is an annual event to reward and motivate successful individuals. The Student Honoring Ceremony is a typical activity and a great festival of FPT Greenwich to show the school's attention to students in a dynamic learning environment.
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="alert alert-primary text-dark" style="height:90%">
+                    <div class="card-heading" style="height:7%"> <h4>Opening Ceremony & Orientation</h4></div>
+                    <hr style="        width: 50%;
+        text-align: left;
+        margin-left: 0;
+        height: 1.2px;
+        color: #FF8C00;
+        background-color: #FF8C00;
+">
+
+                    <div class="card-body">
+                        <div class="">
+                            <a class="" href="https://greenwich.edu.vn/[hcm]-le-khai-giang-tan-sinh-vien-khoa-vii-dot-1-vd95.html">
+                                <div class="" data-aos="zoom-in">
+                                    <img class="img-responsive" src="~/Images/gre1.png" width="100%" alt="Image">
+                                </div>
+                            </a>
+                            <div class="card-footer">
+                                On August 24 and 25, new students, batch 7, batch 2 of the University of Greenwich Hanoi campus had a 2-day experience in the framework of Orientation & Opening Ceremony. This is the first activity of the New Students under the University of Greenwich, where you will spend 4 years studying and practicing.
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="alert alert-primary text-dark" style="height:90%">
+                    <div class="card-heading" style="height:7%"><h4>Team Building</h4></div>
+                    <hr style="        width: 50%;
+        text-align: left;
+        margin-left: 0;
+        height: 1.2px;
+        color: #FF8C00;
+        background-color: #FF8C00;
+">
+                    <div class="card-body">
+                        <div class="">
+                            <a class="" href="https://greenwich.edu.vn/an-tuong-bua-tiec-teambuilding-cua-tan-sinh-vien-khoa-vii-...10.html">
+                                <div class="" data-aos="zoom-in">
+                                    <img class="img-responsive" src="~/Images/teambuilding.jpg" width="100%" alt="Image">
+                                </div>
+                            </a>
+                            <div class="card-footer">
+                                The Team building program has become a tradition, considered a specialty religious dish of Greenwich University (Vietnam) students each opening season. Inspire learning and development for Vietnamese students in the age of global integration and Show combination and start a big boom.
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr style="        width: 90%;
+        text-align: left;
+        height: 1.8px;
+        color: #FF8C00;
+        background-color: #FF8C00;
+">
+<div class="row" style="margin-top: 20px">
+    <div class="col-sm-4">
+        <img src="~/Images/universityGW.jpg" class="img-thumbnail" alt="Image">
+    </div>
+    <div class="col-sm-8">
+        <h3 class="title-university"> GREENWICH UNIVERSITY</h3>
+        <p>
+            Greenwich University was formed on the basis of the association between Greenwich University (UK) and FPT Education Organization since 2009 with more than 12,000 students from 12 countries around the world who have been studying.
+            Training content, faculty and facilities are accredited and quality recognized by UK experts and the University of Greenwich.
+            Graduates will receive a Bachelor's degree (Bachelor's Degree) issued by the University of Greenwich, which is globally valid. With this degree, students can continue to study for a Master or Doctorate in many countries around the world.
+        </p>
+    </div>
+</div>
+<hr style="        width: 50%;
+        text-align: left;
+        height: 1.8px;
+        color: #FF8C00;
+        background-color: #FF8C00;
+">
+<div class="row" style="margin-top: 20px">
+    <div class="col-sm-4">
+        <img src="~/Images/certificate.png" class="img-thumbnail" alt="Image">
+    </div>
+    <div class="col-sm-8">
+        <h5 class="title-certificate">
+            1. SPECIAL EXERCISE PROGRAM OJT
+        </h5>
+        <p>
+            OJT (On the job training) is a special business program of Greenwich University for 3rd year students. Designed with a duration of 4 months with 2 training periods, OJT gives students real knowledge. Currently, is an opportunity to help students experience their career, accumulate work experience and career after graduation.
+        </p>
+        <h5 class="title-certificate">
+            2. EMPLOYMENT OPPORTUNITIES OPEN AFTER GRADUATION
+        </h5>
+        <p>
+            Graduates of Greenwich University are welcome to work at FPT Corporation (with 7 member companies and more than 20,000 staff members), and hundreds of enterprises, partner groups in Vietnam as well as around the world
+        </p>
+        <h5 class="title-certificate">
+            3. INTERNATIONAL ENVIRONMENT - STUDY WITH INTERNATIONAL TEACHERS AND STUDENTS
+        </h5>
+        <p>
+            Greenwich University always tries to provide students with a comprehensive educational environment, bringing the values of professionalism. Students studying at the University of Greenwich will study in an environment similar to studying abroad with international curriculum, faculty and students from many countries around the world.
+        </p>
+        <h5 class="title-certificate">
+            4. OPPORTUNITIES TO LEARN ABROAD
+        </h5>
+        <p>
+            While studying at the school, Greenwich University students have the opportunity to experience the learning environment in countries outside Vietnam through student exchange programs, internships, seminars ... typically:
+
+        <p> • English study program in the Philippines, Malaysia, Singapore ... </p>
+
+        <p>
+            • Experience indigenous life and cultural exchanges in other countries
+
+        </p>
+        <h5 class="title-certificate">5. COMPLETE YOURSELF WITH THE SKILL DEVELOPMENT PROGRAM (PDP) CHAIN</h5>
+        <p>
+            In addition to knowledge, students will be comprehensively developed with life skills training, soft skills through skill classes and many exciting experiential activities.
+        </p>
+        <h5 class="title-certificate">6. Cost is equal to 1/10 compared to studying abroad in the UK</h5>
+        <p>
+            At the University of Greenwich, the cost of studying students is only 1/10 compared to studying in the UK to get a Bachelor's degree from the University of Greenwich UK.
+        </p>
+    </div>
+    <hr style="        width: 90%;
+        text-align: left;
+        height: 1.8px;
+        color: #FF8C00;
+        background-color: #FF8C00; " />
+
+</div>
+
+
+
+<div class="list-department">
+    <div class="tab-localtion">
+        <div class="row" style="margin-top: 20px">
+            <div class="col-sm-3">
+                <div class="alert alert-info" style="height:90%">
+                    <h3>
+                        HÀ NỘI
+                    </h3>
+                    <h6>
+                        ĐẠI HỌC GREENWICH (VIỆT NAM)
+                    </h6>
+                    <p class="text-left"> Tòa nhà DETECH -Số 8 Tôn Thất Thuyết-P.Mỹ Đình 2-Q.Nam Từ Liêm </p>
+                    <p class="text-left"> Điện thoại: 024.7300.2266 </p>
+                    <p class="text-left"> Hotline: 0981.558.080 | 0971.274.545 </p>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="alert alert-info" style="height:90%">
+                    <h3>
+                        HỒ CHÍ MINH
+                    </h3>
+                    <h6>
+                        ĐẠI HỌC GREENWICH (VIỆT NAM)
+                    </h6>
+                    <p class="small-text-left"> CS1: Số 142-146 Phạm Phú Thứ - Phường 4 - Quận 6 (Cuối đường 3/2) </p>
+                    <p class="text-left"> CS2: 205 Nguyễn Xí, Phường 26, Bình Thạnh </p>
+                    <p class="text-left"> Điện thoại: 028.7300.2266</p>
+                    <p class="text-left"> Hotline: 0933.108.554 | 0971.294.545 </p>
+                </div>
+            </div>
+
+
+            <div class="col-sm-3">
+                <div class="alert alert-info" style="height:90%">
+                    <h3>
+                        ĐÀ NẴNG
+                    </h3>
+                    <h6>
+                        ĐẠI HỌC GREENWICH (VIỆT NAM)
+                    </h6>
+                    <p class="text-left"> 658 Ngô Quyền, Phường An Hải Bắc, Quận Sơn Trà, Tp. Đà Nẵng </p>
+                    <p class="text-left"> Điện thoại: 0236.730.2266 </p>
+                    <p class="text-left"> Hotline: 0934.892.687 </p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="alert alert-info" style="height:90%">
+                    <h3>
+                        CẦN THƠ
+                    </h3>
+                    <h6>
+                        ĐẠI HỌC GREENWICH (VIỆT NAM)
+                    </h6>
+                    <p class="text-left"> Số 160 đường 30/4, phường An phú, quận Ninh Kiều - TP. Cần Thơ </p>
+                    <p class="text-left"> Điện thoại: 0292.3512.369 </p>
+                    <p class="text-left"> Hotline: 0968.670.804 | 0936.600.861 </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <hr style="        width: 90%;
+        text-align: left;
+        height: 1.8px;
+        color: #FF8C00;
+        background-color: #FF8C00;
+">
+
+    <div class="container" style="text-align: center; padding: 10px;">
+        <a href="https://facebook.com/GreenwichVietnam" class="item-social"
+           padding: 5px;
+           font-size: 20px;
+           width: 30px;
+           text-align: center;
+           text-decoration: none;
+           margin: 3px 2px;><img src="https://greenwich.edu.vn/templates/default/images/facebook.png" alt=""></a>
+        <a href="https://www.youtube.com/channel/UCO60geidjQPqSc6TH35YUEw" class="item-social"
+           padding: 5px;
+           font-size: 20px;
+           width: 30px;
+           text-align: center;
+           text-decoration: none;
+           margin: 3px 2px;><img src="https://greenwich.edu.vn/templates/default/images/youtube.png" alt=""></a>
+        <a href="" class="item-social"
+           padding: 5px;
+           font-size: 20px;
+           width: 30px;
+           text-align: center;
+           text-decoration: none;
+           margin: 3px 2px;><img src="https://greenwich.edu.vn/templates/default/images/google.png" alt=""></a>
+        <a href="https://www.instagram.com/uogvn/" class="item-social"
+           padding: 5px;
+           font-size: 20px;
+           width: 30px;
+           text-align: center;
+           text-decoration: none;
+           margin: 3px 2px;><img src="https://greenwich.edu.vn/templates/default/images/instagram.png" alt=""></a>
+    </div>
+    <div class="clear"></div>
+</div>
+
+
