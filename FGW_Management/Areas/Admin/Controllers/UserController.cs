@@ -196,11 +196,12 @@ namespace FGW_Management.Areas.Admin
         // POST: admin/user/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(string id, int departmentId)
         {
-            ViewData["Departments"] = new SelectList(_context.Departments.ToList(), "Id", "Name");
             var user = await _context.Users.FindAsync(id);
+
             _context.Users.Remove(user);
+
             await _context.SaveChangesAsync(); 
             return RedirectToAction(nameof(Index));
         }

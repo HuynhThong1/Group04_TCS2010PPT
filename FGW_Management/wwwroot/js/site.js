@@ -26,9 +26,10 @@ $("#CreateNewGroupButton").click(function () {
         url: "/api/group",
         data: JSON.stringify(data),
         success: (data) => {
+            $('#CreateNewGroup').modal('hide');
             reloadGroup();
-            location.reload();
-            //$('#CreateNewGroup').modal('hide');
+            //location.reload();
+            
         },
         dataType: 'json',
         contentType: 'application/json'

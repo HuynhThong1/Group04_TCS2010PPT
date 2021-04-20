@@ -3,14 +3,16 @@ using System;
 using FGW_Management.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FGW_Management.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210419080949_19.04.2021")]
+    partial class _19042021
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,7 +52,6 @@ namespace FGW_Management.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("ContributorId")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Status")
@@ -105,7 +106,7 @@ namespace FGW_Management.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("DepartmentId")
+                    b.Property<int?>("DepartmentId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Email")
@@ -420,9 +421,7 @@ namespace FGW_Management.Migrations
                 {
                     b.HasOne("FGW_Management.Models.FGW_User", "Contributor")
                         .WithMany("Contributions")
-                        .HasForeignKey("ContributorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ContributorId");
 
                     b.HasOne("FGW_Management.Models.Submission", "Submission")
                         .WithMany("Contributions")
@@ -439,9 +438,7 @@ namespace FGW_Management.Migrations
                 {
                     b.HasOne("FGW_Management.Models.Department", "Department")
                         .WithMany("FGW_Users")
-                        .HasForeignKey("DepartmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DepartmentId");
 
                     b.Navigation("Department");
                 });

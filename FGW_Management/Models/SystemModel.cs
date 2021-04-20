@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.IO;
 
 namespace FGW_Management.Models
@@ -43,9 +44,9 @@ namespace FGW_Management.Models
         //[Required(ErrorMessage = "Please fill your address!")]
         [Display(Name = "Address")]
         public string Address { get; set; }
-
+        
         [DisplayName("Department Name")]
-        public int? DepartmentId { get; set; }
+        public int DepartmentId { get; set; }
         public virtual Department Department { get; set; }
 
         public virtual ICollection<Contribution> Contributions { get; set; }
@@ -100,6 +101,7 @@ namespace FGW_Management.Models
         public ContributionStatus Status { get; set; }
 
 
+        [Required]
         public string ContributorId { get; set; }
         public virtual FGW_User Contributor { get; set; }
         
